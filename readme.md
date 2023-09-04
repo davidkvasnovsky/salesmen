@@ -38,9 +38,9 @@ This project is configured to use Laravel Sail, which provides a Docker environm
 
 - `GET /salesmen`: List all salesmen
 - `POST /salesmen`: Create a new salesman
-- `GET /salesmen/{id}`: Retrieve a specific salesman
-- `PUT /salesmen/{id}`: Update a specific salesman
-- `DELETE /salesmen/{id}`: Delete a specific salesman
+- `GET /salesmen/{salesman_uuid}`: Retrieve a specific salesman
+- `PUT /salesmen/{salesman_uuid}`: Update a specific salesman
+- `DELETE /salesmen/{salesman_uuid}`: Delete a specific salesman
 
 ### Codelists
 
