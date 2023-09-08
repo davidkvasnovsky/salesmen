@@ -7,8 +7,9 @@ namespace App\Providers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
-use RuntimeException;
+use Illuminate\Support\Str;
 use ReflectionMethod;
+use RuntimeException;
 
 final class MacroServiceProvider extends ServiceProvider
 {
@@ -39,6 +40,13 @@ final class MacroServiceProvider extends ServiceProvider
                 }
 
                 throw new RuntimeException(message: 'No bound model found.');
+            }
+        );
+
+        Str::macro(
+            name: 'trimDoubleSpaces',
+            macro: function ($string) {
+                return preg_replace('/\s+/', ' ', $string);
             }
         );
     }
