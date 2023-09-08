@@ -38,7 +38,7 @@ final class IndexSalesmanController
             $columns = Cache::remember(
                 key: 'salesman_columns',
                 ttl: 60,
-                callback: fn() => Schema::getColumnListing(
+                callback: fn () => Schema::getColumnListing(
                     table: (new Salesman())->getTable()
                 )
             );

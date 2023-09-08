@@ -45,9 +45,7 @@ final class MacroServiceProvider extends ServiceProvider
 
         Str::macro(
             name: 'trimDoubleSpaces',
-            macro: function ($string) {
-                return preg_replace('/\s+/', ' ', $string);
-            }
+            macro: fn ($string) => preg_replace('/\s+/', ' ', $string)
         );
     }
 }

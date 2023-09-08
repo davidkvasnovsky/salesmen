@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Exceptions;
 
 use App\Http\Enums\ResponseCodeEnum;
-use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;

@@ -11,7 +11,7 @@ trait HasListableDetails
     public static function all(): Collection
     {
         return collect(self::cases())->map(
-            fn(self $case) => $case->details()
+            fn (self $case) => $case->details()
         );
     }
 }

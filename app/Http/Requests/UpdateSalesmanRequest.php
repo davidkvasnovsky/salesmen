@@ -6,13 +6,11 @@ namespace App\Http\Requests;
 
 use App\Http\Validation\Rules\InputDataBadFormatRule;
 use App\Http\Validation\Rules\InputDataOutOfRangeRule;
-use Domains\Salesman\Data\UpdateSalesmanData;
 use Domains\Support\Enums\GenderEnum;
 use Domains\Support\Enums\MaritalStatusEnum;
 use Domains\Support\Enums\TitleAfterEnum;
 use Domains\Support\Enums\TitleBeforeEnum;
 use Illuminate\Foundation\Http\FormRequest;
-use Spatie\LaravelData\WithData;
 
 final class UpdateSalesmanRequest extends FormRequest
 {

@@ -13,7 +13,6 @@ use Domains\Support\Enums\MaritalStatusEnum;
 use Domains\Support\Enums\TitleAfterEnum;
 use Domains\Support\Enums\TitleBeforeEnum;
 use Illuminate\Foundation\Http\FormRequest;
-use Spatie\LaravelData\WithData;
 
 final class CreateSalesmanRequest extends FormRequest
 {
