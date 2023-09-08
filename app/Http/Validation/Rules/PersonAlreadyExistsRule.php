@@ -7,13 +7,16 @@ namespace App\Http\Validation\Rules;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
-final readonly class PersonAlreadyExistsRule implements ValidationRule
+final class PersonAlreadyExistsRule implements ValidationRule
 {
+    public bool $implicit = true;
+
     public function __construct(
-        private string $table,
-        private string $object,
-        private ?string $column = null,
+        private readonly string $table,
+        private readonly string $object,
+        private readonly ?string $column = null,
     ) {
     }
 
@@ -30,7 +33,7 @@ final readonly class PersonAlreadyExistsRule implements ValidationRule
         ]);
 
         if ($validator->fails()) {
-            $fail("{$this->object} with such {$attribute} {$value} is already registered.");
+            $fail(Str::trimDoubleSpaces("{$this->object} with such {$attribute} {$value} is already registered."));
         }
     }
 }

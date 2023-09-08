@@ -7,12 +7,15 @@ namespace App\Http\Validation\Rules;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
-final readonly class InputDataOutOfRangeRule implements ValidationRule
+final class InputDataOutOfRangeRule implements ValidationRule
 {
+    public bool $implicit = true;
+
     public function __construct(
-        protected int $min,
-        protected int $max
+        protected readonly int $min,
+        protected readonly int $max
     ) {
     }
 
@@ -28,7 +31,9 @@ final readonly class InputDataOutOfRangeRule implements ValidationRule
 
         if ($validator->fails()) {
             $fail(
-                "Input data out of range. Field {$attribute} of value {$value} is out of range. Acceptable range for this field is {$this->min} to {$this->max}."
+                Str::trimDoubleSpaces(
+                    "Input data out of range. Field {$attribute} of value {$value} is out of range. Acceptable range for this field is {$this->min} to {$this->max}."
+                )
             );
         }
     }

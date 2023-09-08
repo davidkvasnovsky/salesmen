@@ -37,6 +37,7 @@ final class CreateSalesmanRequest extends FormRequest
                 ),
             ],
             'titles_before' => [
+                'sometimes',
                 'nullable',
                 new InputDataBadFormatRule(
                     allowedTypes: ['array', 'enum', 'distinct'],
@@ -48,6 +49,7 @@ final class CreateSalesmanRequest extends FormRequest
                 ),
             ],
             'titles_after' => [
+                'sometimes',
                 'nullable',
                 new InputDataBadFormatRule(
                     allowedTypes: ['array', 'enum', 'distinct'],
@@ -77,6 +79,7 @@ final class CreateSalesmanRequest extends FormRequest
                 ),
             ],
             'phone' => [
+                'sometimes',
                 'nullable',
                 new InputDataBadFormatRule(
                     allowedTypes: ['string', 'phone']
@@ -89,6 +92,7 @@ final class CreateSalesmanRequest extends FormRequest
                 )
             ],
             'marital_status' => [
+                'sometimes',
                 'nullable',
                 new InputDataBadFormatRule(
                     allowedTypes: ['string', 'enum'],
