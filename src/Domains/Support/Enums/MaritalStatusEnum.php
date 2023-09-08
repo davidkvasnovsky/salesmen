@@ -23,27 +23,39 @@ enum MaritalStatusEnum: string implements BaseEnum, CodelistEnum
     {
         return match ($this) {
             self::Single => [
-                GenderEnum::Male->value => 'slobodný',
-                GenderEnum::Female->value => 'slobodná',
-                'general' => 'slobodný / slobodná',
+                'code' => self::Single,
+                'name' => [
+                    GenderEnum::Male->value => 'slobodný',
+                    GenderEnum::Female->value => 'slobodná',
+                    'general' => 'slobodný / slobodná',
+                ],
             ],
 
             self::Married => [
-                GenderEnum::Male->value => 'ženatý',
-                GenderEnum::Female->value => 'vydatá',
-                'general' => 'ženatý / vydatá',
+                'code' => self::Married,
+                'name' => [
+                    GenderEnum::Male->value => 'ženatý',
+                    GenderEnum::Female->value => 'vydatá',
+                    'general' => 'ženatý / vydatá',
+                ],
             ],
 
             self::Divorced => [
-                GenderEnum::Male->value => 'rozvedený',
-                GenderEnum::Female->value => 'rozvedená',
-                'general' => 'rozvedený / rozvedená',
+                'code' => self::Divorced,
+                'name' => [
+                    GenderEnum::Male->value => 'rozvedený',
+                    GenderEnum::Female->value => 'rozvedená',
+                    'general' => 'rozvedený / rozvedená',
+                ],
             ],
 
             self::Widowed => [
-                GenderEnum::Male->value => 'vdovec',
-                GenderEnum::Female->value => 'vdova',
-                'general' => 'vdovec / vdova',
+                'code' => self::Widowed,
+                'name' => [
+                    GenderEnum::Male->value => 'vdovec',
+                    GenderEnum::Female->value => 'vdova',
+                    'general' => 'vdovec / vdova',
+                ],
             ],
         };
     }
